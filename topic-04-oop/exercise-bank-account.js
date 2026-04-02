@@ -20,20 +20,20 @@
 
 // TASK 2 — deposit()
 // Defensive check first — must be a number and greater than 0.
-// If invalid log the message and return early.
-// If valid add to balance and push a transaction object.
+// If invalid, log the message and return early.
+// If valid, add to the balance and push a transaction object.
 // The object needs type, amount, and the updated balance.
 
 // TASK 3 — withdraw()
 // Same defensive check as deposit.
-// Extra check — if amount is more than balance log insufficient funds.
+// Extra check — if the amount is more than the balance, log insufficient funds.
 // Struggled here — wrote amount -= this.balance at first.
 // The math was completely backwards. Simple flip fixed it.
-// this.balance -= amount is what actually reduces the balance.
+// this. balance -= amount is what actually reduces the balance.
 
 // TASK 4 — getStatement()
 // Loop through transaction array with for...of.
-// Each item is an object so I access properties with dot notation.
+// Each item is an object, so I access properties with dot notation.
 // Check the type on each one and format the output accordingly.
 // Template literals made the formatting clean.
 
@@ -42,7 +42,7 @@
 // validation again inside this method. Then I realized 
 // withdraw() and deposit() already handle all of that.
 // Two lines. That was the whole method.
-// When it clicked it felt obvious but getting there took a minute.
+// When it clicked, it felt obvious, but getting there took a minute.
 
 // TASK 6 — Full run
 // Built both accounts and ran every call from the expected output.
@@ -66,7 +66,7 @@ class BankAccount {
             return
         }
         this.balance += amount
-        this.transaction.push({ type: "deposit", amount, balance: this.balance })
+        this.transaction.push({ type: "deposit", amount, balance: this.balance, createdAt: new Date().toISOString()})
     }
 
     withdraw(amount) {
@@ -79,7 +79,18 @@ class BankAccount {
             return
         }
         this.balance -= amount  // had this backwards — amount -= this.balance originally
-        this.transaction.push({ type: "withdrawal", amount, balance: this.balance })
+        this.transaction.push({ type: "withdrawal", amount, balance: this.balance, createdAt: new Date().toISOString() })
+    }
+    applyInterest(rate) {
+    // rate must be a number and greater than 0
+    if (typeof rate !== "number" || rate <= 0) {
+        console.log("Invalid rate")
+        return
+    }
+    let interest = this.balance * rate / 100
+    this.balance += interest;
+    this.transaction.push({ type: "interest", amount: interest, balance: this.balance, createdAt: new Date().toISOString() })
+    console.log(`Interest applied: $${interest.toFixed(2)}`)
     }
 
     getStatement() {
@@ -88,7 +99,9 @@ class BankAccount {
                 console.log(`deposit: +$${transaction.amount} | Balance: $${transaction.balance}`)
             } else if (transaction.type === "withdrawal") {
                 console.log(`withdrawal: -$${transaction.amount} | Balance: $${transaction.balance}`)
-            }
+            } else if (transaction.type === "interest") {
+                console.log(`interest: +$${transaction.amount.toFixed(2)} | Balance: $${transaction.balance}`)
+}
         }
     }
 
@@ -112,7 +125,9 @@ account1.withdraw(200)
 account1.withdraw(1000)       // Insufficient Funds
 account1.transfer(100, account2)
 account1.getStatement()
-account2.getStatement()
+account1.applyInterest(5)    // 5% interest on current balance
+account1.applyInterest(-1)   // Invalid rate
+account1.getStatement()      // should now show interest transaction
 
 // account1 expected:
 // deposit: +$500 | Balance: $500
@@ -140,10 +155,6 @@ account2.getStatement()
 // Additions to implement (will revise and add more after some time)
 // ============================================================
 
-// Add interest calculation — applyInterest(rate) multiplies balance by the rate and records it as a transaction
-
-// Add transaction timestamps using new Date().toISOString() pushed into each transaction object
-
 // Add a running transaction ID to each push so every transaction is uniquely numbered
 
 // Add a depositLimit and withdrawLimit property — reject transactions above a set threshold
@@ -154,7 +165,7 @@ account2.getStatement()
 
 // Add an accountNumber property generated automatically using Math.random() when the account is created
 
-// Add a closeAccount() method that sets balance to 0, clears transactions, and logs "Account closed"
+// Add a closeAccount() method that sets the balance to 0, clears transactions, and logs "Account closed."
 
 // ============================================================
 // BIGGEST LESSON
@@ -168,4 +179,3 @@ account2.getStatement()
 // already do the work. The instinct to rewrite logic that
 // already exists is the wrong instinct. Trust what you built.
 // Reuse it.
-
