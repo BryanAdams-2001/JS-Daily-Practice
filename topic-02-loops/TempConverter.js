@@ -3,11 +3,11 @@
 // Instructions:
 
 // Write a function called convertTemp that accepts two parameters: temp and unit
-// Use a switch statement on unit
+// Use a switch statement on the unit
 // If unit is "C" convert Celsius to Fahrenheit: (temp * 9/5) + 32
 // If unit is "F" convert Fahrenheit to Celsius: (temp - 32) * 5/9
 // If unit is "K" convert Kelvin to Celsius: temp - 273.15
-// Default should console log "Invalid unit"
+// Default should console log "Invalid unit."
 // Round all results to 1 decimal place
 // Test with at least 3 calls using different units
 
