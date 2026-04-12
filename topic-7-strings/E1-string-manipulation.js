@@ -1,4 +1,3 @@
-// ============================================================
 // EXERCISE — String Inspector
 // Write a function called stringStats(str)
 // It accepts a string
@@ -65,10 +64,10 @@ console.log(stringStats("Hello World 123"))
 // split("") vs split(" ") — this was the biggest takeaway.
 // The separator you pass in determines what gets broken apart.
 // Empty string = individual characters.
-// Space = words. One character, completely different behavior.
+// Space = words. One character has a completely different behavior.
 
 // hasNumbers — I had never used or seen /\d/.test() before this exercise.
-// Regular expressions felt intimidating but this use case is actually clean and simple.
+// Regular expressions felt intimidating, but this use case is actually clean and simple.
 // /\d/ is the pattern meaning any digit 0 through 9.
 // .test(str) runs that pattern against the string
 // and just returns true or false. That is it.
@@ -81,7 +80,7 @@ console.log(stringStats("Hello World 123"))
 // The object does all the work in one clean structure.
 
 // ── Result ───────────────────────────────────────────────
-// All five properties matched expected output exactly.
+// All five properties matched the expected output exactly.
 // length: 15, wordCount: 3, hasNumbers: true,
 // reversed: '321 dlroW olleH', uppercase: 'HELLO WORLD 123'
 
@@ -91,4 +90,4 @@ console.log(stringStats("Hello World 123"))
 // Search bars count words and reverse lookups.
 // Form validators check input format before sending to a server.
 // This exact pattern, loop through properties, test the string,
-// return a structured result, is something I will use again.
+// return a structured result is something I will use again.
