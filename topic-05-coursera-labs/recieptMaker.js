@@ -3,7 +3,6 @@
 // Functions: getPrices() and getDiscount()
 // First time applying Red Green Refactor in a real lab setting
 // ============================================================
-// ============================================================
 // DATASET
 // ============================================================
 const dishData = [
@@ -110,21 +109,17 @@ function getDiscount(taxBoolean, guests) {
 }
 
 // ---- WHAT WENT WRONG IN MY FIRST ATTEMPT ----
-//
 // BUG 1 — Used guests === Number instead of typeof guests === 'number'
 //   Number is a data type, not a value  that check always fails
 //   typeof returns a string like 'number'  that is what you compare against
-//
 // BUG 2 — Used || instead of &&
 //   || means OR, only one condition needs to be true
 //   50 > 0 is true so it would pass with || even though 50 >= 30
 //   && means AND  ALL conditions must be true simultaneously
-//
 // BUG 3 — Nested the discount logic outside the outer if block
 //   The discount if/else needs to live INSIDE the valid guests block
 //   Otherwise, it runs even when guests are invalid
 // ---- REFACTOR — What was cleaned up ----
-//
 // Removed redundant else if (guests >= 5), replaced with plain else
 // If the number of guests is not less than 5, it is automatically 5 or greater
 // Removed unnecessary semicolons for consistency
