@@ -5,17 +5,12 @@
 // Multiples of both: "FizzBuzz"
 // Use at least one && operator
 
-
-// YOUR CODE HERE
-
-
 function counter() {
     let fizzCount = 0;
     let buzzCount = 0;
     for (let i = 1; i <= 30; i++) {
         fizzCount++
         buzzCount++
-
 
         if (fizzCount == 3 && buzzCount == 5) {
             console.log("FizzBuzz");
@@ -33,8 +28,6 @@ function counter() {
     }
 }
 counter();
-///// Explanation and Thought Process /////
-
 
 // ---- STEP BY STEP APPROACH ----
 //
@@ -45,7 +38,6 @@ counter();
 // Step 4 — Build that one step and make it work before moving on
 // Step 5 — Read the next instruction with fresh eyes
 
-
 // ---- WHAT IS THIS CODE ASKING ME TO DO? ----
 //
 // Use a for loop to count from 1 to 30.
@@ -54,13 +46,11 @@ counter();
 // Find numbers divisible by BOTH 3 and 5 print "FizzBuzz".
 // Do all of this without using the modulo operator.
 
-
 // ---- WHAT SHOULD THE OUTPUT LOOK LIKE? ----
 //
 // 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14,
 // FizzBuzz, Fizz, 17, Fizz, 19, Buzz, Fizz, 22, 23, Fizz, FizzBuzz,
 // 26, Fizz, 28, 29, FizzBuzz
-
 
 // ---- WHAT IS THE FIRST TINY STEP? ----
 //
@@ -73,7 +63,6 @@ counter();
 // 5th — Make sure every if block logs the correct output
 // 6th — Reset the counter after every successful condition
 //        so it keeps cycling and does not get stuck
-
 
 // ---- REFLECTION ----
 //
@@ -108,6 +97,3 @@ counter();
 // Keeping track of mistakes and staying detail-oriented is everything.
 // If I were working inside a big codebase, one wrong operator could
 // break a lot more than a FizzBuzz counter, and now I know that.
-
-
-
