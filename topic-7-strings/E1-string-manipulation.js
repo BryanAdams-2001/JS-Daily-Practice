@@ -48,7 +48,7 @@ console.log(stringStats("Hello World 123"))
 // then filled in each property one at a time.
 // That structure kept me from getting overwhelmed trying to solve everything at once.
 
-// ── What I Got Wrong ─────────────────────────────────────
+// ── What I Got Wrong ─
 // 1. was limit testing and Had true || false for hasNumbers as a placeholder
 //    learned quickly that That expression always evaluates to true — even if it's not
 //    a toggle it is just true. Placeholder should have been false.
