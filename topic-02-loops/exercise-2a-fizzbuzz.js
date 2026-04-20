@@ -29,7 +29,7 @@ function counter() {
 }
 counter();
 
-// ---- STEP BY STEP APPROACH ----
+// --- STEP BY STEP APPROACH ---
 //
 // Step 1 — Read the whole problem once before writing anything
 // Step 2 — Ask: What should the output look like? Work backwards from that
