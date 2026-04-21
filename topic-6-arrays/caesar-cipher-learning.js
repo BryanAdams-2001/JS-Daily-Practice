@@ -1,7 +1,6 @@
 // ============================================================
 // EXERCISE 5 — Caesar Cipher
 // ============================================================
-
 // RED: Before writing code, I expected:
 // caesarCipher("hello world", 3) -> "khoor zruog"
 // At first when I ran the empty function, it returned undefined,
@@ -77,31 +76,31 @@ console.log(caesarCipher("abc", -1));
 // expected: "zab"
 
 
-// WHAT I LEARNED FROM THIS EXERCISE
+//WHAT I LEARNED FROM THIS EXERCISE
 
-// - Going into this, I honestly didn’t even know what ASCII really was or how it worked.
-//   I’ve seen charCodeAt() before, but never understood why you’d actually use it.
+//Going into this, I honestly didn’t even know what ASCII really was or how it worked.
+//I’ve seen charCodeAt() before, but never understood why you’d actually use it.
 
-// - This is the first time I realized that letters are just numbers underneath.
-//   Once I saw that "a" = 97 and "z" = 122, shifting letters started to make more sense.
+//This is the first time I realized that letters are just numbers underneath.
+//Once I saw that "a" = 97 and "z" = 122, shifting letters started to make more sense.
 
-// - I struggled at first with checking ranges — I forgot to include the endpoints
-//   (>= and <=), which caused bugs that weren’t obvious right away.
+//I struggled at first with checking ranges — I forgot to include the endpoints
+//(>= and <=), which caused bugs that weren’t obvious right away.
 
-// - I also initially tried to compare the character directly instead of converting it
-//   to a number, which didn’t work. That was a key “aha” moment.
+//I also initially tried to compare the character directly instead of converting it
+//to a number, which didn’t work. That was a key “aha” moment.
 
-// - The hardest part was understanding the wrap-around logic using modulo.
-//   Thinking of the alphabet as a loop (0–25) instead of ASCII values made it click.
+//The hardest part was understanding the wrap-around logic using modulo.
+//Thinking of the alphabet as a loop (0–25) instead of ASCII values made it click.
 
-// - I learned that sometimes you have to temporarily “normalize” data (subtract 97 or 65),
-//   do your math, then convert it back.
+//I learned that sometimes you have to temporarily “normalize” data (subtract 97 or 65),
+//do your math, then convert it back.
 
-// - Another small but important lesson: strings are built step-by-step.
-//   I originally thought about using an object, but that didn’t match the output I needed.
+//Another small but important lesson: strings are built step-by-step.
+//I originally thought about using an object, but that didn’t match the output I needed.
 
-// - Overall, this exercise forced me to slow down and really think through each step
-//   instead of guessing — especially with conditionals and edge cases.
+//Overall, this exercise forced me to slow down and really think through each step
+//instead of guessing — especially with conditionals and edge cases.
 
-// - This is probably the first time I felt like I was actually *understanding*
-//   how characters and strings work under the hood, not just using them.
+//This is probably the first time I felt like I was actually *understanding*
+//how characters and strings work under the hood, not just using them.
