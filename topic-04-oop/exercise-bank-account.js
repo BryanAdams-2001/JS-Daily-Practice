@@ -1,4 +1,3 @@
-// ============================================================
 // Bank Account System — OOP Practice
 // Concepts: classes, constructors, methods, defensive coding,
 //           for...of loops, this keyword, array of objects
