@@ -6,7 +6,6 @@
 // patterns, and the this keyword — but this time building
 // something real from scratch instead of just following along with a tutorial.
 // ============================================================
-// ============================================================
 // RED — Task by Task Breakdown
 // ============================================================
 
