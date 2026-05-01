@@ -1,15 +1,15 @@
 // Password Validator — practicing defensive programming and loops
-// came back and cleaned this up but leaving my original mistakes
-// in the comments so i can see how far ive come
+// came back and cleaned this up, but leaving my original mistakes
+// in the comments so I can see how far I've come
 
 // ============================================================
-// what i thought this needed to do before writing anything
+// what I thought this needed to do before writing anything
 // ============================================================
 //
 // - check if the input is actually a string first
 // - check the length is long enough
-// - check if theres a number in there somewhere
-// - i added uppercase on my own because it felt more real
+// - check if there's a number in there somewhere
+// - I added uppercase on my own because it felt more real
 // - log the right message depending on what fails
 
 
@@ -18,18 +18,18 @@
 // ============================================================
 //
 // original mistake 1 — used var instead of let everywhere
-// didnt think it mattered at the time but learned var is
+//didn't think it mattered at the time, but learned var is
 // function scoped and can cause weird bugs in bigger codebases
 //
 // original mistake 2 — wrote hasNumber == false in the condition
 // instead of === false or just !hasNumber
-// loose equality works here but its sloppy and could bite me later
+// loose equality works here, but it's sloppy and could bite me later
 //
 // original mistake 3 — forgot that isNaN() on the uppercase check
-// was necessary. without it numbers were passing as uppercase because
-// "5".toUpperCase() === "5" is true. a digit has no case so it
+// was necessary. Without it, numbers were passing as uppercase because
+// "5".toUpperCase() === "5" is true. a digit has no case, so it
 // always matches itself. took me a while to figure out why
-// "alllowercase1" was passing when it shouldnt
+// "alllowercase1" was passing when it shouldn't
 
 
 function validatePassword(password) {
@@ -49,7 +49,7 @@ function validatePassword(password) {
     for (let i = 0; i < password.length; i++) {
 
         // !isNaN confused me at first — double negative
-        // isNaN means "is Not a Number" so !isNaN means "IS a number"
+        // isNaN means "is Not a Number," so !isNaN means "IS a number."
         if (!isNaN(password[i])) {
             hasNumber = true
         }
@@ -88,17 +88,17 @@ validatePassword(12345)             // not a string
 
 
 // ============================================================
-// things i want to come back and fix
+// things I want to come back and fix
 // ============================================================
 //
 // TODO: extract the loop logic into helper functions
 //   containsNumber(str)
 //   containsUppercase(str)
-// right now everything is crammed into one function
+// right now, everything is crammed into one function
 // which makes it harder to test individual pieces
 //
 // TODO: write proper Jest tests for each condition
-// now that i know TDD i would have caught the isNaN bug
+// now that I know TDD, I would have caught the isNaN bug
 // immediately with a failing test instead of manually
 // checking outputs until something looked wrong
 //
